@@ -1,0 +1,78 @@
+.Massage{
+    height:550px;
+    background: linear-gradient(#841C3A, #b64767 , #841C3A);
+    padding:60px 0;
+}
+.message-img{
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+.massage-content h4{
+text-align: center;
+}
+.massage-heading{
+    margin-bottom: 50px;
+}
+
+@media (max-width: 575.98px) { 
+    .Massage{
+        height: auto;
+    }
+    .massage-content{
+        text-align: center;
+        }
+        .message-img{
+            max-width: 100%;
+        }
+        .massage-img img{
+            width: 100%;
+            height: 5px;
+        }
+        .massage-heading{
+           font-size: 20px;
+        }
+ }
+
+
+@media (max-width: 767.98px) { 
+    .Massage{
+        height: auto;
+    }
+    .massage-content{
+        text-align: center;
+        }
+        .message-img{
+            max-width: 100%;
+        }
+        .massage-heading{
+            font-size: 20px;
+         }
+ }
+
+@media (max-width: 991.98px) { 
+    .Massage{
+        height: auto;
+    }
+    .massage-content{
+        text-align: center;
+        }
+        .message-img{
+            max-width: 100%;
+        }
+        .massage-heading{
+            font-size: 20px;
+         }
+ }
+
+
+@media (max-width: 1199.98px) {
+    .Massage{
+        height: auto;
+    }
+    .massage-content{
+        text-align: center;
+        }
+        .message-img{
+            max-width: 100%;
+        }
+ }

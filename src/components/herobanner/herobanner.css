@@ -1,0 +1,85 @@
+.HeroBanner{
+    height:500px;
+    background-image: url(./assets/banner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center center;
+   
+}
+
+.herobanner-img{
+    max-width: 100%;
+}
+.herro-banner-content{
+    align-items: center;
+}
+.style-content h1{
+    color: #971E3E;
+    font-size: 40px;
+}
+.style-content p{
+    color: #E1C59E;
+}
+@media (max-width: 575.98px) { 
+    .HeroBanner{
+        height: auto;
+        padding:20px 20px 0;
+    }
+    .style-content h1{
+        color: #971E3E;
+        font-size: 30px;
+        text-align: center;
+    }
+    .style-content p{
+        font-size: 14px;
+        color: #E1C59E;
+        text-align: left;
+    }
+ }
+
+@media (max-width: 767.98px) { 
+    .HeroBanner{
+        height: auto;
+        padding:20px 20px 0;
+    }
+    .style-content h1{
+        color: #971E3E;
+        font-size: 32px;
+    }
+    .style-content h1{
+        color: #971E3E;
+        font-size: 32px;
+        text-align: center;
+    }
+    .style-content p{
+        font-size: 14px;
+        color: #E1C59E;
+        text-align: left;
+    }
+ }
+
+@media (max-width: 991.98px) { 
+    .HeroBanner{
+        height: auto;
+    }
+    .style-content h1{
+        color: #971E3E;
+        font-size: 34px;
+    }
+    .style-content p{
+        font-size: 14px;
+        color: #E1C59E;
+        text-align: left;
+    }
+ }
+
+
+@media (max-width: 1199.98px) {
+    .HeroBanner{
+        height: auto;
+    }
+    .style-content h1{
+        color: #971E3E;
+        font-size: 36px;
+    }
+ }
