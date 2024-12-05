@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## HOW TO RUN SMOOTH :
+##  npm install webpack@latest react-scripts@latest
+##  npm install react-scripts@latest
+##  npm start
 ## Available Scripts
 
 In the project directory, you can run:
