@@ -23,6 +23,8 @@ class App extends React.Component {
             {/* <Route path="/about" component={About}  /> */}
             {/* Thêm các route khác nếu cần */}
           </Switch>
+          <Spa />
+          <Massage />
           <Footer />
         </div>
       </Router>
