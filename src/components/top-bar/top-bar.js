@@ -1,89 +1,61 @@
 import React from 'react';
 import './top-bar.css';
 import logo from './assets/logo.png';
-class TopBar extends React.Component{
-    render(){
-        return(
-            
-                <div className="topbr">
-                <div className="container">
-                <div className="row">
-                    <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                      <div className="logo-img">
-                      <img src={logo} />
-                      </div>
-                     
-                    </div>
-                </div>
-                
-                <div className="row">
-                    <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <nav class="navbar navbar-expand-lg navbar-light ">
-                   
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-      <a class="nav-link text-white" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link text-white" href="#">Services</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link text-white" href="#">Price List</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link text-white" href="#">Gallery</a>
-      </li>
-      <li class="nav-item">
-                    <a class="nav-link text-white" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Contact Us</a>
-                    </li>
-    </ul>
-  </div>
-</nav>
+import { Link } from 'react-router-dom'; // Import Link từ react-router-dom
 
-                    {/* <nav class="navbar navbar-expand-lg navbar-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo01">
-                    <ul class="navbar-nav">
+class TopBar extends React.Component {
+  render() {
+    return (
+      <div className="topbr">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div className="logo-img">
+                <img src={logo} alt="Logo" />
+              </div>
+            </div>
+          </div>
 
-                    <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Home</a>
-
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <nav className="navbar navbar-expand-lg navbar-light">
+                <button
+                  className="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                  <ul className="navbar-nav">
+                    <li className="nav-item active">
+                      <Link className="nav-link text-white" to="/">Home</Link>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Services</a>
+                    <li className="nav-item">
+                      <Link className="nav-link text-white" to="/services">Services</Link>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Price List</a>
+                    <li className="nav-item">
+                      <Link className="nav-link text-white" to="/gallery">Gallery</Link>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Gallery</a>
+                    <li className="nav-item">
+                      <Link className="nav-link text-white" to="/about">About Us</Link>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link text-white" href="#">About Us</a>
+                    <li className="nav-item">
+                      <Link className="nav-link text-white" to="/contact">Contact Us</Link>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Contact Us</a>
-                    </li>
-                    </ul>
-                    </div>
-                    </nav> */}
-
-                    </div>
+                  </ul>
                 </div>
-                </div>
-                </div>
-            
-        );
-    }
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default TopBar;

@@ -9,7 +9,7 @@ class Footer extends React.Component{
                 <div className="row">
                   <div className="col-sm-12 col-md-4 col-lg-4 col-xl-4 footer-logo">
                     <img src={footlog} class="footer-logo-img"/>
-                    <p>Copyright @ 2014 BeatyClinic <br/>Privacy Policy</p>
+                    <p>Copyright @ 2024 BeatyClinic <br/>Privacy Policy</p>
                   </div>
                      
                   <div className="col-sm-12 col-md-4 col-lg-4 col-xl-4 footer-menu">

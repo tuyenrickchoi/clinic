@@ -1,0 +1,35 @@
+/* src/service.css */
+.service-page {
+    padding: 50px 0;
+    background-color: #f5f5f5;
+  }
+  
+  .service-page h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .service-page .row .col-sm-12 {
+    margin-bottom: 30px;
+  }
+  
+  .service-page h3 {
+    font-size: 24px;
+    color: #007bff;
+    margin-top: 20px;
+  }
+  
+  .service-page p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .service-img {
+    width: 100%; /* Đặt ảnh tự động chiếm toàn bộ chiều rộng cột */
+    height: auto; /* Đảm bảo tỷ lệ ảnh được giữ nguyên */
+    border-radius: 10px; /* Bo góc ảnh */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng cho ảnh */
+    margin-bottom: 15px;
+  }
+  
