@@ -17,15 +17,12 @@ class App extends React.Component {
         <div className="App">
           <TopBar />
           <Switch>
-            <Route exact path="/" component={HeroBanner} />
-            <Route path="/services" component={Service} />
-            <Route path="/gallery" component={Gallery} />
-            {/* <Route path="/about" component={About}  /> */}
-            {/* Thêm các route khác nếu cần */}
-          </Switch>
-          <Spa />
-          <Massage />
-          <Footer />
+  <Route exact path="/" component={HeroBanner} />
+  <Route path="/services" component={Service} />
+  <Route path="/gallery" component={Gallery} />
+  <Route path="/about" component={AboutUs} />
+  {/* <Route path="/contact" component={Contact} /> */}
+</Switch>
         </div>
       </Router>
     );

@@ -4,7 +4,7 @@ import './service.css'; // Tạo file CSS riêng cho trang dịch vụ
 import massageImg from './assets/massage5.jpg'; // Thêm đường dẫn đến ảnh
 import spaImg from './assets/spa.jpg';
 import facialImg from './assets/facial.jpg';
-
+import Footer from './footer';
 class Service extends React.Component {
   render() {
     return (
@@ -32,9 +32,12 @@ class Service extends React.Component {
               <h3>Facial Treatments</h3>
               <p>Explore our facial treatments for clearer, smoother, and glowing skin.</p>
             </div>
+            
           </div>
         </div>
+        <Footer/>
       </div>
+      
     );
   }
 }
