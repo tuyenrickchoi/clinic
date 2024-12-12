@@ -8,6 +8,7 @@ import Footer from './footer';
 import Service from './Service'; // Trang Services
 import Gallery from './Gallery'; // Trang Gallery
 import AboutUs from './About';  // Trang AboutUs
+import Contact from './Contact'; // Trang Contact
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Sử dụng Switch thay Routes
 
 class App extends React.Component {
@@ -21,7 +22,7 @@ class App extends React.Component {
   <Route path="/services" component={Service} />
   <Route path="/gallery" component={Gallery} />
   <Route path="/about" component={AboutUs} />
-  {/* <Route path="/contact" component={Contact} /> */}
+  <Route path="/contact" component={Contact} /> 
 </Switch>
         </div>
       </Router>
