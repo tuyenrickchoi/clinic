@@ -7,8 +7,9 @@ import Massage from './massage';
 import Footer from './footer';
 import Service from './Service'; // Trang Services
 import Gallery from './Gallery'; // Trang Gallery
-import AboutUs from './About';  // Trang AboutUs
+import About from './AboutUs';  // Trang AboutUs
 import Contact from './Contact'; // Trang Contact
+import SkinLaser from './SkinLaserPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Sử dụng Switch thay Routes
 
 class App extends React.Component {
@@ -21,13 +22,16 @@ class App extends React.Component {
   <Route exact path="/" component={HeroBanner} />
   <Route path="/services" component={Service} />
   <Route path="/gallery" component={Gallery} />
-  <Route path="/about" component={AboutUs} />
+  <Route path="/about" component={About} />
+  <Route path="/SkinLaserPage" component={SkinLaser} />
   <Route path="/contact" component={Contact} /> 
 </Switch>
         </div>
       </Router>
     );
+    
   }
+  
 }
 
 export default App;

@@ -1,0 +1,109 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.hero-text {
+  
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-text h3    {
+  font-family: unset;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-left: 60px; /* Tăng khoảng cách dưới h1 */
+}
+
+
+
+/* Service Section */
+.service-section {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.service-item {
+  width: 30%;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.service-description {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.service-description h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.service-description p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.testimonial-item {
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #555;
+}
+
+.testimonial-item span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Footer Section */
+.footer-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  margin-top: 40px;
+}
