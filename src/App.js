@@ -12,7 +12,9 @@ import Contact from './Contact'; // Trang Contact
 import SkinLaser from './SkinLaserPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Sử dụng Switch thay Routes
 
+
 class App extends React.Component {
+  
   render() {
     return (
       <Router>
