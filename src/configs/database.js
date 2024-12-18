@@ -1,12 +1,17 @@
-const mongoose = require("mongoose");		
-		
-async function connectDB(){		
-try {		
-await mongoose.connect("mongodb+srv://gaxuongban:thetuyen123@cluster0.aziq4.mongodb.net/Clinic?retryWrites=true&w=majority&appName=Cluster0");		
-console.log("connect db success");		
-} catch(error){		
-console.log("connect db fail: ", error.message);		
-}		
-}		
-		
-module.exports = connectDB;		
+const mongoose = require("mongoose");
+require('dotenv').config();
+
+async function connectDB(){
+    try {
+        await mongoose.connect(process.env.MONGODB_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log("Connected to MongoDB successfully");
+    } catch(error){
+        console.error("MongoDB connection error:", error.message);
+        process.exit(1); // Thoát process nếu không kết nối được DB
+    }
+}
+
+module.exports = connectDB;

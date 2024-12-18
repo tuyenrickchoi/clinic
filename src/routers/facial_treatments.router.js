@@ -9,13 +9,10 @@ const {
     deleteFacial
 } = require('../controllers/facial_treatments.controller');
 
-router.route('/')
-    .post(createFacial)
-    .get(getFacials);
-
-router.route('/:id')
-    .get(getFacialById)
-    .put(updateFacial)
-    .delete(deleteFacial);
+router.get('/', getFacials);
+router.post('/', createFacial);
+router.get('/:id', getFacialById);
+router.put('/:id', updateFacial);
+router.delete('/:id', deleteFacial);
 
 module.exports = router;

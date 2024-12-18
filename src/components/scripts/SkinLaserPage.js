@@ -1,11 +1,11 @@
 import React from 'react';
-import './SkinLaserPage.css'; // Link to the CSS file
+import '../styles/SkinLaserPage.css'; // Link to the CSS file
 import Footer from './footer';
 import { useEffect } from 'react';
-import img3 from './assets/laser.jpg';
-import img2 from './assets/seo mun.jpg';
-import img1 from './assets/seo tre.jpg';
-import img0 from './assets/trietlong.jpg'; // Import image here
+import img3 from '../../assets/laser.jpg';
+import img2 from '../../assets/seo mun.jpg';
+import img1 from '../../assets/seo tre.jpg';
+import img0 from '../../assets/trietlong.jpg'; // Import image here
 const SkinLaserPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // Cuộn lên tọa độ x: 0, y: 0

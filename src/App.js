@@ -1,15 +1,12 @@
 import React from 'react';
-import './App.css';
-import TopBar from './top-bar';
-import HeroBanner from './herobanner';
-import Spa from './spa';
-import Massage from './massage';
-import Footer from './footer';
-import Service from './Service'; // Trang Services
-import Gallery from './Gallery'; // Trang Gallery
-import About from './AboutUs';  // Trang AboutUs
-import Contact from './Contact'; // Trang Contact
-import SkinLaser from './SkinLaserPage';
+import TopBar from './components/scripts/top-bar';
+import Footer from './components/scripts/footer';
+import HeroBanner from './components/scripts/herobanner';
+import Gallery from './components/scripts/Gallery'; // Trang Gallery
+import About from './components/scripts/AboutUs';  // Trang AboutUs
+import Contact from './components/scripts/Contact'; // Trang Contact
+import SkinLaser from './components/scripts/SkinLaserPage';
+import Services from './views/service'; // Thêm import cho Services component
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Sử dụng Switch thay Routes
 
 
@@ -21,13 +18,14 @@ class App extends React.Component {
         <div className="App">
           <TopBar />
           <Switch>
-  <Route exact path="/" component={HeroBanner} />
-  <Route path="/services" component={Service} />
-  <Route path="/gallery" component={Gallery} />
-  <Route path="/about" component={About} />
-  <Route path="/SkinLaserPage" component={SkinLaser} />
-  <Route path="/contact" component={Contact} /> 
-</Switch>
+            <Route exact path="/" component={HeroBanner} />
+            <Route path="/gallery" component={Gallery} />
+            <Route path="/about" component={About} />
+            <Route path="/SkinLaserPage" component={SkinLaser} />
+            <Route path="/contact" component={Contact} /> 
+            <Route path="/services" component={Services} /> 
+          </Switch>
+          <Footer />
         </div>
       </Router>
     );

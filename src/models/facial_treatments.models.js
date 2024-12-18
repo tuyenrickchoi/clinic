@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
 
-const facialSchema = new mongoose.Schema({
+const facialSchema = mongoose.Schema({
     name:{
         type:String,
         require: true,
         unique: true,
+    },    
+    description:{
+        type:String,
+        require: true,
     },
     price:{
         type:Number,
@@ -14,11 +18,8 @@ const facialSchema = new mongoose.Schema({
     //     type:String,
     //     require: true,
     // },
-    descirption:{
-        type:String,
-        require: true,
-    },
+
     
 });
 
-module.exports = mongoose.model('Facial Treaments', facialSchema, 'Facial Treaments');
+module.exports = mongoose.model('FacialTreatment', facialSchema);
