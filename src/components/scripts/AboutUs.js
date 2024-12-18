@@ -1,16 +1,15 @@
 import React from "react";
-import "./about.css";
+import "../styles/about.css";
 import '@fontsource/poppins'; // Import font Poppins
-import heroImage from "../src/assets/Inkedbanner_4_LI2.jpg";
-import tuyen from "../src/assets/tuyen.jpg";
-import tram from "../src/assets/tram.jpg";
+import heroImage from "../../assets/Inkedbanner_4_LI2.jpg";
+import tuyen from "../../assets/tuyen.jpg";
+import tram from "../../assets/tram.jpg";
 import { Link } from 'react-router-dom';
-import ngoc from "../src/assets/ngocc.jfif";
-import tin from "../src/assets/tin.jpg";
-import viet from "../src/assets/viet.jpg";
-import phuc from "../src/assets/phuc.jpg";
-import trung from "../src/assets/trung.jfif";
-import Footer from './footer';
+import ngoc from "../../assets/ngocc.jfif";
+import tin from "../../assets/tin.jpg";
+import viet from "../../assets/viet.jpg";
+import phuc from "../../assets/phuc.jpg";
+import trung from "../../assets/trung.jfif";
 
 const testimonials = [
   {
@@ -135,7 +134,6 @@ const AboutUs = () => {
           ))}
         </div>
       </div>
-      <Footer />  
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import './top-bar.css';
-import logo from './assets/logo.png';
+import '../styles/top-bar.css';
+import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom'; // Import Link từ react-router-dom
 
 class TopBar extends React.Component {

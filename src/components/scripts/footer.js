@@ -1,6 +1,6 @@
 import React from 'react';
-import './footer.css';
-import footlog from './assets/footlog.png';
+import '../styles/footer.css';
+import footlog from '../../assets/footlog.png';
 class Footer extends React.Component{
   render(){
       return(

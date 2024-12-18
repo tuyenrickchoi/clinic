@@ -1,9 +1,8 @@
 import React from 'react';
-import './herobanner.css';
+import '../styles/herobanner.css';
 import Spa from './spa';
 import Massage from './massage';
-import girl from './assets/girls.png';
-import Footer from './footer';
+import girl from '../../assets/girls.png';
 class HeroBanner extends React.Component{
   render(){
       return(
@@ -29,7 +28,6 @@ class HeroBanner extends React.Component{
             </div>
             <Spa />
             <Massage />
-            <Footer />
           </div>
       );
   }

@@ -1,10 +1,9 @@
 import React from 'react';
-import './spa.css';
-import border from './assets/border.png';
-import img1 from './assets/img1.png';
-import img2 from './assets/img2.png';
-import img3 from './assets/img3.png';
-import img4 from './assets/img4.png';
+import '../styles/spa.css';
+import border from '../../assets/border.png';
+import img1 from '../../assets/img1.jpg';
+import img2 from '../../assets/img2.jpg';
+import img3 from '../../assets/img3.jpg';
 class Spa extends React.Component{
   render(){
       return(
@@ -12,7 +11,7 @@ class Spa extends React.Component{
               <div className="container">
                   <div className="row">
                   <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
-                     <h2 className="text-white">SPA TREATMENTS</h2>
+                     <h2 className="text-white spa-heading">SPA TREATMENTS</h2>
                      <div className="massage-img">
                      <img src={border}></img>
                      </div>
