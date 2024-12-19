@@ -69,17 +69,24 @@ const Services = () => {
         <div className="service-data">
           <h2 className="text-center">{currentService} Options</h2>
           <div className="row">
-            {serviceData.map((item) => (
-              <div key={item._id || item.id} className="col-sm-12 col-md-6 col-lg-4">
-                <div className="card" style={{ width: '18rem', margin: '10px' }}>
-                  <div className="card-body">
-                    <h5 className="card-title">{item.name}</h5>
-                    <p className="card-text">{item.description || item.descirption}</p>
-                    <p className="card-text">$ {item.price}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          {serviceData.map((item) => ( 
+  <div key={item._id || item.id} className="col-sm-12 col-md-6 col-lg-4">
+    <div className="card" style={{ width: '18rem', margin: '10px' }}>
+      <img 
+        src={item.img} 
+        alt={item.name} 
+        className="card-img-top" 
+        style={{ height: '200px', objectFit: 'cover' }} 
+      />
+      <div className="card-body">
+        <h5 className="card-title">{item.name}</h5>
+        <p className="card-text">{item.description || item.descirption}</p>
+        <p className="card-text">$ {item.price}</p>
+      </div>
+    </div>
+  </div>
+))}
+          
           </div>
         </div>
       </div>

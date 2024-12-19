@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/SkinLaserPage.css'; // Link to the CSS file
-import Footer from './footer';
+
 import { useEffect } from 'react';
 import img3 from '../../assets/laser.jpg';
 import img2 from '../../assets/seo mun.jpg';
@@ -58,7 +58,6 @@ const SkinLaserPage = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };
