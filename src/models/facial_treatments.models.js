@@ -14,10 +14,10 @@ const facialSchema = mongoose.Schema({
         type:Number,
         require: true,
     },
-    // img:{
-    //     type:String,
-    //     require: true,
-    // },
+    img:{
+        type:String,
+        require: true,
+    },
 
     
 });
