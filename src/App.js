@@ -2,7 +2,7 @@ import React from 'react';
 import TopBar from './components/scripts/top-bar';
 import Footer from './components/scripts/footer';
 import HeroBanner from './components/scripts/herobanner';
-import Gallery from './components/scripts/Gallery'; // Trang Gallery
+import Gallery from './views/gallery';
 import About from './components/scripts/AboutUs';  // Trang AboutUs
 import Contact from './components/scripts/Contact'; // Trang Contact
 import SkinLaser from './components/scripts/SkinLaserPage';
