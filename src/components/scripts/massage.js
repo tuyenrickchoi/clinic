@@ -4,7 +4,7 @@ import border from '../../assets/border.png';
 import massage1 from '../../assets/massage.jpg';
 import massage2 from '../../assets/massage1.jpg';
 import massage3 from '../../assets/massage2.jpg';
-
+import Footer from './footer';
 
 class Massage extends React.Component{
   render(){
@@ -44,7 +44,9 @@ class Massage extends React.Component{
                 
                   </div>
               </div>
+             
           </div>
+
       );
   }
 }

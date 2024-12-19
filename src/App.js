@@ -19,12 +19,16 @@ class App extends React.Component {
           <TopBar />
           <Switch>
             <Route exact path="/" component={HeroBanner} />
+            </Switch>
+          <Switch>
             <Route path="/gallery" component={Gallery} />
             <Route path="/about" component={About} />
             <Route path="/SkinLaserPage" component={SkinLaser} />
             <Route path="/contact" component={Contact} /> 
             <Route path="/services" component={Services} /> 
+        
           </Switch>
+          
           <Footer />
         </div>
       </Router>
