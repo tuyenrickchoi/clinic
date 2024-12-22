@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/gallery-detail.css';
+import { Link } from 'react-router-dom';
 
 const GalleryDetail = () => {
     const { id } = useParams(); // Lấy ID từ URL
@@ -11,6 +12,9 @@ const GalleryDetail = () => {
     useEffect(() => {
         fetchGalleryItem();
         fetchRelatedItems();
+        
+        // Cuộn lên đầu trang khi ID thay đổi
+        window.scrollTo(0, 0);
     }, [id]);
 
     const fetchGalleryItem = async () => {
@@ -29,12 +33,15 @@ const GalleryDetail = () => {
 
     const fetchRelatedItems = async () => {
         try {
-            const response = await fetch(`/api/gallery/${id}/related`);
+            const response = await fetch('/api/gallery');
             if (!response.ok) {
                 throw new Error('Failed to fetch related items');
             }
             const data = await response.json();
-            setRelatedItems(data);
+
+            // Lọc sản phẩm liên quan (không bao gồm sản phẩm hiện tại)
+            const related = data.filter(item => item._id !== id);
+            setRelatedItems(related.slice(0, 4)); // Lấy tối đa 4 sản phẩm liên quan
         } catch (error) {
             console.error('Error fetching related items:', error);
         }
@@ -97,14 +104,16 @@ const GalleryDetail = () => {
                 <div className="row">
                     {relatedItems.map((item) => (
                         <div key={item._id} className="col-sm-6 col-md-3">
-                            <div className="related-item">
-                                <img
-                                    src={item.imageUrl}
-                                    alt={item.title}
-                                    className="related-img"
-                                />
-                                <h5>{item.title}</h5>
-                            </div>
+                            <Link to={`/gallery/${item._id}`}>
+                                <div className="related-item">
+                                    <img
+                                        src={item.imageUrl}
+                                        alt={item.title}
+                                        className="related-img"
+                                    />
+                                    <h5>{item.title}</h5>
+                                </div>
+                            </Link>
                         </div>
                     ))}
                 </div>
