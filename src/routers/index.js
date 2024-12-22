@@ -9,5 +9,6 @@ module.exports = (app) => {
     app.use('/api/massages', massageRoutes);
     app.use('/api/spas', spaRoutes);
     app.use('/api/gallery', galleryRoutes);
+    
     app.use('/api/bookings', bookingRoutes);
 };

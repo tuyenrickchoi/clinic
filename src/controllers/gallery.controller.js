@@ -29,5 +29,26 @@ module.exports = {
         } catch (error) {
             return res.status(500).json({ message: error.message });
         }
+    },
+    getGalleryItemById: async (req, res) => {
+        try {
+            const item = await galleryModel.findById(req.params.id);
+            if (!item) {
+                return res.status(404).json({ message: "Gallery item not found" });
+            }
+            return res.status(200).json(item);
+        } catch (error) {
+            return res.status(500).json({ message: error.message });
+        }
+    },
+    getRelatedItems: async (req, res) => {
+        try {
+            // Lấy tất cả sản phẩm trong gallery
+            const relatedItems = await galleryModel.find().limit(6); // Giới hạn số lượng sản phẩm liên quan (tuỳ chọn)
+    
+            return res.status(200).json(relatedItems);
+        } catch (error) {
+            return res.status(500).json({ message: error.message });
+        }
     }
-}; 
+};

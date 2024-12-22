@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 const router = require("./src/routers");
 
+
 // Enable CORS
 
 // Middleware để parse JSON và form data
@@ -20,7 +21,7 @@ router(app);
 // Serve static files từ thư mục build của React
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('build'));
-
+ 
   // Tất cả các routes khác sẽ được handle bởi React Router
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
