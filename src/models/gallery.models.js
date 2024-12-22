@@ -20,12 +20,7 @@ const gallerySchema = mongoose.Schema({
                 comment: String // Nội dung đánh giá
             }
     ],
-    relatedItems: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "gallery", // Tham chiếu đến chính model `Gallery`
-        }
-    ],
+
     createdAt: {
         type: Date,
         default: Date.now
