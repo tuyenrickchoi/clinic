@@ -1,0 +1,128 @@
+.gallery-detail-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.gallery-img {
+    width: 500px; /* Chiều rộng cố định */
+    height: 350px; /* Chiều cao cố định */
+    object-fit: cover; /* Cắt ảnh để vừa khít khung */
+    margin-bottom: 20px;
+    border-radius: 10px; /* Bo góc ảnh */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Đổ bóng */
+    /* Hiệu ứng hover */}
+.gallery-img:hover {
+        transform: scale(1); /* Phóng to nhẹ khi hover */
+      }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-detail-page h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.gallery-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.description {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #b10e58;
+    margin: 10px 0;
+}
+
+.price-discount {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 18px;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.actions .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #b10e58;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 10px 10px 10px; /* Khoảng cách phải giữa các nút */
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+.actions .btn:hover {
+    background-color: #8e0c48;
+}
+
+.reviews {
+    margin-top: 30px;
+}
+
+.reviews h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.review {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.review strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.review p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.related-items {
+    margin-top: 40px;
+}
+
+.related-items h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.related-item {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.related-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.related-item h5 {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
