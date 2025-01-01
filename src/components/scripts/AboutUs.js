@@ -92,9 +92,9 @@ const AboutUs = () => {
       </div>
 
       <div className="mission-section">
-        <h2>Our Mission</h2>
+        <h2>Our Service</h2>
         <p>
-          Our mission is to empower individuals and organizations to achieve their goals through
+          Our Service is to empower individuals and organizations to achieve their goals through
           innovative solutions and exceptional service. We believe in creating value and building
           lasting relationships with our clients.
         </p>
@@ -104,7 +104,7 @@ const AboutUs = () => {
   <div class="overlay-content">
     <h1>TTN <span>Skin & Laser</span></h1>
     <p>
-      The advanced laser technology at FV Lifestyle also helps solve other skin problems effectively, quickly and safely
+      The advanced laser technology at TTN Lifestyle also helps solve other skin problems effectively, quickly and safely
     </p>
     <Link to="/SkinLaserPage">
         <button className="btn-see-more">See more...</button>

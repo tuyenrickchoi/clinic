@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'; // Import Link
 import '../components/styles/serviceDetail.css';
 
 const ServiceDetail = () => {
-  const { id } = useParams(); // Lấy id từ URL
+  const { id } = useParams(); // Get id from URL
   const [service, setService] = useState(null);
   const [bookingData, setBookingData] = useState({
     customerName: '',
@@ -13,11 +13,11 @@ const ServiceDetail = () => {
     time: '',
     notes: ''
   });
+  const [bookingSuccess, setBookingSuccess] = useState(false); // Track booking status
 
-  // Hàm fetch dữ liệu chi tiết dịch vụ
+  // Fetch service details
   const fetchServiceDetail = useCallback(async () => {
     try {
-      // Gửi yêu cầu tới từng endpoint để tìm dịch vụ có id tương ứng
       const endpoints = ['/api/facials', '/api/massages', '/api/spas'];
       let foundService = null;
 
@@ -31,7 +31,7 @@ const ServiceDetail = () => {
         foundService = data.find(item => item._id === id);
 
         if (foundService) {
-          break;  // Dừng khi tìm thấy dịch vụ
+          break;
         }
       }
 
@@ -43,7 +43,7 @@ const ServiceDetail = () => {
     } catch (error) {
       console.error('Error fetching service details:', error);
     }
-  }, [id]); // Chỉ gọi lại fetchServiceDetail khi id thay đổi
+  }, [id]);
 
   useEffect(() => {
     fetchServiceDetail();
@@ -75,7 +75,7 @@ const ServiceDetail = () => {
         throw new Error('Booking failed');
       }
 
-      alert('Booking successful!');
+      setBookingSuccess(true); // Set success flag after booking
     } catch (error) {
       console.error('Error creating booking:', error);
       alert('Failed to create booking. Please try again.');
@@ -87,17 +87,14 @@ const ServiceDetail = () => {
       {service ? (
         <div className="container">
           <h1 className="text-center">{service.name}</h1>
-          <img src={service.img} alt={service.name} className="img-fluid" />
-          
+          <img src={service.img} alt={service.name} className="img-fluid  service-img" />
 
-          {/* Hiển thị thông tin chi tiết của dịch vụ */}
           <div>
             <h2>Service Details:</h2>
             <p><strong>Description:</strong> {service.description}</p>
             <p><strong>Price:</strong> ${service.price}</p>
           </div>
 
-          {/* Booking Form */}
           <div>
             <h3>Book a {service.name}</h3>
             <form onSubmit={handleBookingSubmit}>
@@ -170,6 +167,16 @@ const ServiceDetail = () => {
               </button>
             </form>
           </div>
+
+          {/* Show the link only if booking is successful */}
+          {bookingSuccess && (
+            <div className="mt-3 text-center">
+              <p>Booking successful!</p>
+              <Link to="/services" className="btn btn-info">
+                Go back to Services
+              </Link>
+            </div>
+          )}
         </div>
       ) : (
         <div className="container text-center">
