@@ -32,4 +32,15 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng cho ảnh */
   margin-bottom: 15px;
 }
-  
+.card-link {
+  text-decoration: none; /* Bỏ gạch dưới cho Link */
+  color: inherit; /* Giữ lại màu chữ ban đầu */
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Thêm hiệu ứng di chuyển nhẹ khi hover */
+}
