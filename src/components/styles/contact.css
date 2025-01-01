@@ -50,6 +50,9 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.text-center {
+  color: white; /* Chỉnh màu chữ thành trắng */
+}
 
 button {
   display: block;
@@ -66,3 +69,24 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+.map-container {
+  width: 100vw; /* Chiếm toàn bộ chiều rộng màn hình */
+  margin: 0; /* Loại bỏ khoảng cách bên ngoài */
+  padding: 0; /* Loại bỏ khoảng cách bên trong */
+  position: relative; /* Đảm bảo không bị ảnh hưởng bởi các thành phần khác */
+  left: 50%; /* Đẩy container vào giữa */
+  transform: translateX(-50%); /* Cân bằng để căn giữa */
+}
+
+.map-container iframe {
+  width: 100%; /* Chiếm toàn bộ chiều rộng của phần tử cha */
+  height: 600px; /* Chiều cao có thể điều chỉnh theo ý muốn */
+  border: none; /* Loại bỏ viền */
+}
+
+.contact-page {
+  margin: 0; /* Loại bỏ khoảng cách mặc định */
+  padding-bottom: 0; /* Loại bỏ khoảng cách phía dưới */
+}
+
