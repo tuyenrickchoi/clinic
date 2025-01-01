@@ -5,6 +5,7 @@ import massageImg from '../assets/massage5.jpg';
 import spaImg from '../assets/spa.jpg';
 import facialImg from '../assets/facial.jpg';
 
+
 const Services = () => {
   const [currentService, setCurrentService] = useState('Facial');
   const [serviceData, setServiceData] = useState([]);
@@ -56,6 +57,10 @@ const Services = () => {
             <img src={spaImg} alt="Spa Treatments" className="service-img" />
             <h3>Spa Treatments</h3>
             <p>Our spa services include herbal treatments and detox programs to help you feel your best.</p>
+                          {/* Sử dụng Link để chuyển hướng */}
+                          <Link to="/bookings" className="btn btn-info my-3">
+          My Booking
+        </Link>
           </div>
           
           {/* Dịch vụ Facial */}

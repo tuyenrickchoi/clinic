@@ -9,6 +9,8 @@ import Contact from './components/scripts/Contact'; // Trang Contact
 import SkinLaser from './components/scripts/SkinLaserPage';
 import Services from './views/service'; // Thêm import cho Services component
 import ServiceDetail from './views/serviceDetail';
+import Bookings from './components/scripts/bookings'; // Thêm import cho Bookings component
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Sử dụng Switch thay Routes
 
 class App extends React.Component {
@@ -25,6 +27,7 @@ class App extends React.Component {
             <Route path="/SkinLaserPage" component={SkinLaser} />
             <Route path="/contact" component={Contact} />
             <Route path="/services" component={Services} />
+            <Route path="/bookings" component={Bookings} />
             <Route path="/service-detail/:id" component={ServiceDetail} />
           </Switch>
           <Footer />
