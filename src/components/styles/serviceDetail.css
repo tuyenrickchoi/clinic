@@ -73,10 +73,21 @@
     margin-bottom: 20px;
     text-align: center;
   }
-  
+  .service-detail-page img {
+    width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng vùng chứa */
+    max-width: 800px; /* Giới hạn chiều rộng tối đa */
+    height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ ảnh */
+    object-fit: cover; /* Đảm bảo ảnh được cắt gọn hợp lý nếu cần */
+    margin: 0 auto; /* Căn giữa ảnh trong vùng chứa */  
+    margin: 0 auto 20px; 
+    display: block; /* Chuyển ảnh thành khối để căn giữa dễ dàng */
+  }
   .service-detail-page form .form-group {
     margin-bottom: 20px;
-  }
+
+      margin-top: 20px; /* Thêm khoảng cách trên văn bản */
+    }
+  
   
   .service-detail-page form .form-group label {
     font-size: 1.1rem;
