@@ -1,0 +1,194 @@
+.shopping-cart-page {
+  min-height: calc(100vh - 200px); /* Adjust based on your header and footer height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.cart-content {
+  display: flex;
+  flex-wrap: nowrap; /* Đảm bảo không xuống dòng */
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px 0;
+  gap: 20px;
+  align-items: flex-start; /* Canh trên cùng */
+}
+
+.cart-items {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng của container */
+}
+
+.cart-item {
+  display: flex;
+  border: 1px solid #4d4747;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cart-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.cart-item-quantity button {
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  margin: 10px;
+  border: none; 
+  background-color:rgb(255, 255, 255); 
+  color: black; 
+  transition: transform 0.2s;
+  outline:none;
+}
+
+.cart-item-name {
+  color: black;
+  font-size: 1.2em; /* Larger font size for name */
+  font-weight: bold;
+}
+
+.cart-item-price {
+  color: red;
+  font-size: 1em; /* Smaller font size for price */
+}
+
+.remove-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 5px; /* Di chuyển sát hơn ra ngoài card */
+  transform: translateY(-50%);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* Làm tròn nút */
+  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+.remove-button:hover {
+  transform: translateY(-50%) scale(1.1);
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng hover */
+}
+
+.remove-button img {
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* Ngăn việc bắt sự kiện trên ảnh */
+}
+
+.order-summary-form {
+  flex: 1; /* Đặt một phần nhỏ hơn cho cột bên phải */
+  display: flex;
+  flex-direction: column; /* Đặt Order Summary ở trên, Form ở dưới */
+  gap: 20px;
+}
+
+.order-summary {
+  width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng trong cột bên phải */
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-form {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.order-form h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-content {
+    flex-direction: column;
+  }
+
+  .order-summary-form {
+    width: 100%; /* Đảm bảo form và summary chiếm toàn bộ chiều rộng */
+  }
+}
