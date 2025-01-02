@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../components/styles/adminPage.css'; // Import the CSS file
 // ...existing code...
 
 const AdminPage = () => {
@@ -45,37 +46,39 @@ const AdminPage = () => {
 
     if (!isAuthenticated) {
         return (
-            <div className="p-6 min-h-screen flex flex-col justify-center"> {/* Add min-h-screen and flex classes */}
-                <h1 className="text-2xl font-bold mb-4">Admin Login</h1>
-                <input 
-                    type="password" 
-                    className="border p-2 mb-4" 
-                    placeholder="Enter password" 
-                    value={password} 
-                    onChange={(e) => setPassword(e.target.value)} 
-                />
-                <button 
-                    className="px-4 py-2 bg-blue-500 text-white" 
-                    onClick={handleLogin}
-                >
-                    Login
-                </button>
+            <div className="login-container">
+                <div className="login-box">
+                    <h1 className="login-title">Admin Login</h1>
+                    <input 
+                        type="password" 
+                        className="login-input" 
+                        placeholder="Enter password" 
+                        value={password} 
+                        onChange={(e) => setPassword(e.target.value)} 
+                    />
+                    <button 
+                        className="login-button"
+                        onClick={handleLogin}
+                    >
+                        Login
+                    </button>
+                </div>
             </div>
         );
     }
 
     return (
-        <div className="p-6 min-h-screen flex flex-col"> {/* Add min-h-screen and flex classes */}
-            <h1 className="text-2xl font-bold mb-4">Admin Dashboard</h1>
-            <div className="mb-6 flex space-x-4">
+        <div className="dashboard-container">
+            <h1 className="dashboard-title">Admin Dashboard</h1>
+            <div className="nav-buttons">
                 <button 
-                    className={`px-4 py-2 ${view === 'bookings' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`} 
+                    className={`nav-button ${view === 'bookings' ? 'active' : 'inactive'}`} 
                     onClick={() => setView('bookings')}
                 >
                     Booking List
                 </button>
                 <button 
-                    className={`px-4 py-2 ${view === 'orders' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`} 
+                    className={`nav-button ${view === 'orders' ? 'active' : 'inactive'}`} 
                     onClick={() => setView('orders')}
                 >
                     Order List
@@ -83,10 +86,10 @@ const AdminPage = () => {
             </div>
             {view === 'bookings' ? (
                 <div>
-                    <h2 className="text-xl font-semibold mb-2 text-center">Booking List</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <h2 className="section-title">Booking List</h2>
+                    <div className="grid-container">
                         {bookings.map((booking) => (
-                            <div key={booking._id} className="p-4 border rounded shadow">
+                            <div key={booking._id} className="card">
                                 <p><strong>Service Name:</strong> {booking.serviceName}</p>
                                 <p><strong>Customer Name:</strong> {booking.customerName}</p>
                                 <p><strong>Phone Number:</strong> {booking.phoneNumber}</p>
@@ -101,10 +104,10 @@ const AdminPage = () => {
                 </div>
             ) : (
                 <div>
-                    <h2 className="text-xl font-semibold mb-2 text-center">Product order list</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <h2 className="section-title">Product Order List</h2>
+                    <div className="grid-container">
                         {sellProducts.map((order) => (
-                            <div key={order._id} className="p-4 border rounded shadow">
+                            <div key={order._id} className="card">
                                 <p><strong>Name:</strong> {order.name}</p>
                                 <p><strong>Phone:</strong> {order.phone}</p>
                                 <p><strong>Address:</strong> {order.address}</p>
@@ -113,7 +116,7 @@ const AdminPage = () => {
                                 <p><strong>Created At:</strong> {new Date(order.createdAt).toLocaleString()}</p>
                                 <div>
                                     <strong>Products:</strong>
-                                    <ul className="list-disc pl-5">
+                                    <ul>
                                         {order.products.map((product) => (
                                             <li key={product._id}>
                                                 {product.name} - {product.quantity} x {product.price.toLocaleString()} Đ
@@ -128,6 +131,6 @@ const AdminPage = () => {
             )}
         </div>
     );
-};
-
+}
+    
 export default AdminPage;

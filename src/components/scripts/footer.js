@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/footer.css';
+import { Link } from 'react-router-dom';
 import footlog from '../../assets/footlog.png';
 class Footer extends React.Component{
   render(){
@@ -34,9 +35,18 @@ class Footer extends React.Component{
                       <li><a href="www.companyname.com" target="_blank"><i class="fa fa-globe"></i> www.companyname.com</a></li>
                     </ul>
                   </div>
+                  
                 </div>
+                
             </div>
+            <Link
+                to="/admin"
+                className="px-6 py-3 bg-blue-500   rounded  transition"
+            >
+                Go to Admin Page
+            </Link>
           </div>
+          
       );
   }
 }

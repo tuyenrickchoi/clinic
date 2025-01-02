@@ -1,21 +1,240 @@
 button {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem; /* Kích thước nhỏ gọn hơn */
     border: none;
+    border-radius: 0.375rem; /* Bo tròn nhẹ */
+    font-size: 0.875rem; /* Kích thước chữ nhỏ hơn */
+    font-weight: 500; /* Tăng độ đậm chữ */
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
 }
 
 button.bg-blue-500 {
-    background-color: #3b82f6;
+    background-color: #3b82f6; /* Màu xanh hiện đại */
     color: white;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Highlight effect */
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3); /* Hiệu ứng đổ bóng tinh tế */
+}
+
+button.bg-blue-500:hover {
+    background-color: #2563eb; /* Tông màu xanh đậm hơn khi hover */
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.5); /* Tăng đổ bóng khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nhấn nổi */
 }
 
 button.bg-gray-200 {
-    background-color: #e5e7eb;
-    color: black;
+    background-color: #f3f4f6; /* Màu xám nhạt tinh tế */
+    color: #374151; /* Màu chữ tối để dễ đọc */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Nhẹ nhàng hơn */
 }
 
-button:hover {
-    opacity: 0.8;
+button.bg-gray-200:hover {
+    background-color: #e5e7eb; /* Màu xám đậm hơn khi hover */
+    transform: translateY(-1px); /* Nhẹ nhàng hơn khi hover */
+    opacity: 0.9;
+}
+
+button:focus {
+    outline: none; /* Loại bỏ viền mặc định */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Hiệu ứng focus */
+}.link-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: #3b82f6;
+    color: rgb(126, 159, 43);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.link-button:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.link-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Chiều cao toàn màn hình */
+    background: linear-gradient(to bottom right, #3b82f6, #6b7280); /* Hiệu ứng gradient */
+    color: #fff; /* Màu chữ trắng */
+    padding: 2rem;
+}
+
+.login-box {
+    background: #ffffff; /* Màu nền hộp */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #374151; /* Màu chữ chính */
+    margin-bottom: 1rem;
+}
+
+.login-input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    color: #374151;
+    background-color: #f9fafb;
+    transition: border-color 0.3s;
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: #3b82f6; /* Viền xanh khi focus */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Hiệu ứng focus */
+}
+
+.login-button {
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #3b82f6;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: #2563eb; /* Màu tối hơn khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nhấn */
+}
+
+.login-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Toàn bộ container */
+.dashboard-container {
+    padding: 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9fafb; /* Nền sáng nhẹ */
+}
+
+/* Tiêu đề chính */
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #374151; /* Màu chữ chính */
+    text-align: center; /* Căn giữa */
+}
+
+/* Thanh điều hướng (booking list và order list) */
+.nav-buttons {
+    display: flex;
+    gap: 1rem; /* Khoảng cách giữa các nút */
+    margin-bottom: 1.5rem;
+    justify-content: center; /* Căn giữa */
+}
+
+.nav-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.nav-button.active {
+    background-color: #3b82f6; /* Màu xanh chủ đạo */
+    color: #ffffff; /* Màu chữ trắng */
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3); /* Hiệu ứng đổ bóng */
+}
+
+.nav-button.inactive {
+    background-color: #e5e7eb; /* Màu xám nhạt */
+    color: #374151; /* Màu chữ tối */
+}
+
+.nav-button:hover {
+    opacity: 0.9; /* Hiệu ứng hover */
+    transform: translateY(-2px); /* Hiệu ứng nổi lên */
+}
+
+/* Grid chứa danh sách bookings hoặc orders */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Hiển thị 1 cột trên màn hình nhỏ */
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 cột trên màn hình trung bình */
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Hiển thị 3 cột trên màn hình lớn */
+    }
+}
+
+/* Các card */
+.card {
+    background-color: #ffffff; /* Màu nền trắng */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+    border: 1px solid #e5e7eb; /* Viền nhẹ */
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Hiệu ứng nổi khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Đổ bóng đậm hơn */
+}
+
+.card strong {
+    color: #111827; /* Màu chữ chính */
+}
+
+.card p {
+    margin: 0.5rem 0;
+    font-size: 0.875rem; /* Kích thước nhỏ hơn */
+    color: #4b5563; /* Màu chữ xám */
+}
+
+.card ul {
+    list-style-type: disc;
+    margin: 0.5rem 0 0 1.5rem; /* Dãn cách danh sách */
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+/* Tiêu đề phần nội dung */
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #374151;
+    text-align: center;
 }
