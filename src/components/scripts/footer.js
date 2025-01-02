@@ -16,11 +16,11 @@ class Footer extends React.Component{
                     <h5 className="text-white">Footer Menu</h5>
                     <ul class="footer-menu-ul">
                       <li><a href="#">home</a></li>
-                      <li><a href="#">about us</a></li>
-                      <li><a href="#">site map</a></li>
-                      <li><a href="#">price list</a></li>
-                      <li><a href="#">gallery</a></li>
-                      <li><a href="#">blog</a></li>
+                      <li><a href="/about">about us</a></li>
+                      <li><a href="https://www.google.com/maps?ll=10.773389,106.677198&z=16&t=m&hl=vi&gl=US&mapclient=embed&cid=2178462190622389290">site map</a></li>
+                      <li><a href="/services">services</a></li>
+                      <li><a href="/gallery">gallery</a></li>
+                      <li><a href="/contact">contact</a></li>
 
                     </ul>
                   </div>

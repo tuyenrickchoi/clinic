@@ -67,7 +67,7 @@ const GalleryDetail = () => {
                 {/* Thông tin sản phẩm */}
                 <div className="col-md-6">
                     <h1>{galleryItem.title}</h1>
-                    <p className="sku">SKU: {galleryItem.sku}</p>
+                    <p className="sku spa-heading">SKU: {galleryItem.sku}</p>
                     <div className="rating">⭐ {reviews.length} đánh giá</div>
                     <p className="description">{galleryItem.description}</p>
     
@@ -84,7 +84,7 @@ const GalleryDetail = () => {
     
             {/* Phần đánh giá */}
             <div className="reviews">
-                <h2>Reviews</h2>
+                <h2 className=" spa-heading">Reviews</h2>
                 {reviews.length >0 ? (
                     reviews.map((review, index) => (
                         <div key={index} className="review">
@@ -100,7 +100,7 @@ const GalleryDetail = () => {
     
             {/* Phần sản phẩm liên quan */}
             <div className="related-items">
-                <h2>Related Items</h2>
+                <h2 className="spa-heading">Related Items</h2>
                 <div className="row">
                     {relatedItems.map((item) => (
                         <div key={item._id} className="col-sm-6 col-md-3">

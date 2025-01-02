@@ -65,7 +65,9 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
-
+.spa-heading{
+  font-family: 'Smiley';
+}
 button:hover {
   background-color: #0056b3;
 }

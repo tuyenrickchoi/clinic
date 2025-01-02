@@ -48,19 +48,19 @@ const Services = () => {
   return (
     <div className="service-page">      
       <div className="container">
-        <h1 className="text-center">Our Services</h1>
+        <h1 className="text-center spa-heading">Our Services</h1>
         <div className="row">
           {/* Dịch vụ Massage */}
           <div className="col-sm-12 col-md-4 col-lg-4 text-center" onClick={() => handleServiceClick('Massage')}>
             <img src={massageImg} alt="Massage Treatments" className="service-img" />
-            <h3>Massage Treatments</h3>
+            <h3 className="text-white spa-heading">Massage Treatments</h3>
             <p>We offer a variety of massage treatments for relaxation and rejuvenation.</p>
           </div>
           
           {/* Dịch vụ Spa */}
           <div className="col-sm-12 col-md-4 col-lg-4 text-center" onClick={() => handleServiceClick('Spa')}>
             <img src={spaImg} alt="Spa Treatments" className="service-img" />
-            <h3>Spa Treatments</h3>
+            <h3 className="text-white spa-heading">Spa Treatments</h3>
             <p>Our spa services include herbal treatments and detox programs to help you feel your best.</p>
                           {/* Sử dụng Link để chuyển hướng */}
                           <Link to="/bookings" className="btn btn-info my-3">
@@ -71,14 +71,14 @@ const Services = () => {
           {/* Dịch vụ Facial */}
           <div className="col-sm-12 col-md-4 col-lg-4 text-center" onClick={() => handleServiceClick('Facial')}>
             <img src={facialImg} alt="Facial Treatments" className="service-img" />
-            <h3>Facial Treatments</h3>
+            <h3 className="text-white spa-heading">Facial Treatments</h3>
             <p>Explore our facial treatments for clearer, smoother, and glowing skin.</p>
           </div>
         </div>
 
         {/* Hiển thị database của dịch vụ */}
         <div className="service-data">
-          <h2 className="text-center">{currentService} Options</h2>
+          <h2 className="text-center spa-heading">{currentService} Options</h2>
           <div className="row">
             {serviceData.map((item) => (
               <div key={item._id || item.id} className="col-sm-12 col-md-6 col-lg-4">

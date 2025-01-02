@@ -6,14 +6,14 @@ class Contact extends React.Component {
     return (
       <div className="contact-page">
         <div className="container">
-          <h1 className="text-center">Contact Us</h1>
+          <h1 className="text-center spa-heading">Contact Us</h1>
           <p className="text-center">We would love to hear from you! Please reach out with any questions or comments.</p>
           <div className="contact-info">
             <p><strong>Phone:</strong> (123) 456-7890</p>
             <p><strong>Email:</strong> contact@clinic.com</p>
           </div>
-          <div className="contact-form">
-            <h2>Contact Form</h2>
+          <div className="contact-form ">
+            <h2 className="spa-heading">Contact Form</h2>
             <form>
               <div className="form-group">
                 <label htmlFor="name">Name:</label>

@@ -30,28 +30,28 @@ const Spa = () => {
               <img src={img1} alt="" />
             </div>
             <h3 className="text-white mb-2">Massages</h3>
-            <p className="text-white">Often it seems to me to be an evil flower of nothingness, or else the cry of the world as it dies</p>
+            <p className="text-white">Often it seems to me to be an evil flower of nothingness</p>
           </div>
           <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center">
             <div className="spa-img" onClick={() => handleServiceClick('Spa')}>
               <img src={img2} alt="" />
             </div>
             <h3 className="text-white">Herbal Spa</h3>
-            <p className="text-white">Often it seems to me to be an evil flower of nothingness, or else the cry of the world as it dies</p>
+            <p className="text-white">Usually it seems to me to be an evil flower of nothingness</p>
           </div>
           <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center">
             <div className="spa-img" onClick={() => handleServiceClick('Spa')}>
               <img src={img3} alt="" />
             </div>
             <h3 className="text-white">Detox</h3>
-            <p className="text-white">Often it seems to me to be an evil flower of nothingness, or else the cry of the world as it dies</p>
+            <p className="text-white">Rare it seems to me to be an evil flower of nothingness</p>
           </div>
           <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center">
             <div className="spa-img" onClick={() => handleServiceClick('Spa')}>
               <img src={img1} alt="" />
             </div>
             <h3 className="text-white">Face Facial</h3>
-            <p className="text-white">Often it seems to me to be an evil flower of nothingness, or else the cry of the world as it dies</p>
+            <p className="text-white">Always it seems to me to be an evil flower of nothingness</p>
           </div>
         </div>
       </div>

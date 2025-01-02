@@ -19,7 +19,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
   transition: transform 0.3s ease-in-out; /* Hiệu ứng hover */
 }
-
+.spa-heading{
+  font-family: 'Smiley';
+}
 .gallery-img:hover {
   transform: scale(1.05); /* Phóng to nhẹ khi hover */
 }

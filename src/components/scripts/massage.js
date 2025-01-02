@@ -30,21 +30,21 @@ const Massage = () => {
             <div className="message-img" onClick={() => handleServiceClick('Massage')}>
               <img src={massage1} alt="" />
             </div>
-            <p className="text-white">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            <p className="text-white">It is a long established fact that a reader will be distracted .</p>
           </div>
           <div className="col-sm-12 col-md-4 col-lg-4 col-xl-4 massage-content">
             <h4 className="text-white massage-heading">Relaxing Massage</h4>
             <div className="message-img" onClick={() => handleServiceClick('Massage')}>
               <img src={massage2} alt="" />
             </div>
-            <p className="text-white">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            <p className="text-white">It is a long established fact that a reader will be distracted .</p>
           </div>
           <div className="col-sm-12 col-md-4 col-lg-4 col-xl-4 massage-content">
             <h4 className="text-white massage-heading">Deep Tissue Massage</h4>
             <div className="message-img" onClick={() => handleServiceClick('Massage')}>
               <img src={massage3} alt="" />
             </div>
-            <p className="text-white">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            <p className="text-white">It is a long established fact that a reader will be distracted .</p>
           </div>
         </div>
       </div>

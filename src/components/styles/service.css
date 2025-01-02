@@ -3,11 +3,13 @@
   padding: 50px 0;
   background: linear-gradient(to bottom, #3885b9 0%, #46e784 50%);
 }
-
+.spa-heading{
+  font-family: 'Smiley';
+}
 .service-page h1 {
   font-size: 36px;
   margin-bottom: 30px;
-  color: #ff0099;
+  color: #b52a5d;
   
 }
 

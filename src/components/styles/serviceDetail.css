@@ -87,7 +87,9 @@
 
       margin-top: 20px; /* Thêm khoảng cách trên văn bản */
     }
-  
+    .spa-heading{
+      font-family: 'Smiley';
+  }
   
   .service-detail-page form .form-group label {
     font-size: 1.1rem;
