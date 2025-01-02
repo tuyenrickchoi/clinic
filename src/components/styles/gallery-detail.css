@@ -3,7 +3,9 @@
     font-family: Arial, sans-serif;
     color: #333;
 }
-
+.spa-heading{
+    font-family: 'Smiley';
+  }
 .gallery-img {
     width: 500px; /* Chiều rộng cố định */
     height: 350px; /* Chiều cao cố định */

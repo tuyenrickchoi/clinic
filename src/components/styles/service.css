@@ -1,14 +1,22 @@
 /* src/service.css */
 .service-page {
   padding: 50px 0;
-  background-color: #6e6e6efa;
+  background: linear-gradient(to bottom, #3885b9 0%, #46e784 50%);
 }
-
+.spa-heading{
+  font-family: 'Smiley';
+}
 .service-page h1 {
   font-size: 36px;
   margin-bottom: 30px;
-  color: #333;
+  color: #b52a5d;
   
+}
+
+.service-page h2{
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #b52a5d;
 }
 
 .service-page .row .col-sm-12 {
@@ -17,7 +25,7 @@
 
 .service-page h3 {
   font-size: 24px;
-  color: #007bff;
+  color: #ff0099;
   margin-top: 20px;
 }
 

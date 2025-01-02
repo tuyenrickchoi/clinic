@@ -2,7 +2,9 @@
   font-family: 'Poppins', sans-serif;
   padding: 20px;
 }
-
+.spa-heading{
+  font-family: 'Smiley';
+}
 .hero-section {
   font-family: 'Poppins', sans-serif;
   font-style: italic;

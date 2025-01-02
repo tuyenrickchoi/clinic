@@ -25,7 +25,7 @@ const Gallery = () => {
   return (
     <div className="gallery-page">
       <div className="container">
-        <h1 className="text-center">Gallery</h1>
+        <h1 className="text-center spa-heading">Gallery</h1>
         <div className="row">
           {galleryItems.map((item) => (
             <div key={item._id} className="col-sm-12 col-md-4 col-lg-4">

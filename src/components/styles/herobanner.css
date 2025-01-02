@@ -6,7 +6,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    padding-bottom: 20px; /* Thêm khoảng cách với footer */
+  
 }
 
 .herobanner-img {
@@ -26,7 +26,7 @@
 }
 
 .style-content p {
-    color: #E1C59E;
+    color: #e09226;
 }
 
 /* Mobile responsiveness */

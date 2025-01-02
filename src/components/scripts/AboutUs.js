@@ -43,14 +43,14 @@ const AboutUs = () => {
       </div>
 
       <p>
-      <h3>Welcome to our website!</h3>
+      <h3 className=" spa-heading">Welcome to our website!</h3>
         We are a team of passionate individuals dedicated to delivering
         the best experiences for our customers. With years of experience and a customer-first
         mindset, we strive to exceed expectations in every project we undertake.
       </p>
 
       <div className="team-section">
-        <h2>Meet Our Team</h2>
+        <h2 className=" spa-heading">Meet Our Team</h2>
         <div className="team-members">
           <div className="team-member">
             <img
@@ -58,8 +58,8 @@ const AboutUs = () => {
               alt="Team Member 1"
               className="team-img"
             />
-            <h3>Eric</h3>
-            <p>Founder & CEO</p>
+            <h3 className=" spa-heading" >Eric</h3>
+            <p className=" spa-heading">Founder & CEO</p>
           </div>
           <div className="team-member">
             <img
@@ -67,8 +67,8 @@ const AboutUs = () => {
               alt="Team Member 2"
               className="team-img"
             />
-            <h3>Thanh Tram</h3>
-            <p>Head of Marketing</p>
+            <h3 className=" spa-heading">Thanh Tram</h3>
+            <p className=" spa-heading">Head of Marketing</p>
           </div>
           <div className="team-member">
             <img
@@ -76,8 +76,8 @@ const AboutUs = () => {
               alt="Team Member 2"
               className="team-img"
             />
-            <h3>Thieu Tin</h3>
-            <p>Manager</p>
+            <h3 className=" spa-heading">Thieu Tin</h3>
+            <p className=" spa-heading">Manager</p>
           </div>
           <div className="team-member">
             <img
@@ -85,14 +85,14 @@ const AboutUs = () => {
               alt="Team Member 3"
               className="team-img"
             />
-            <h3>Hong Ngoc</h3>
-            <p>Lead Developer</p>
+            <h3 className=" spa-heading">Hong Ngoc</h3>
+            <p className=" spa-heading">Lead Developer</p>
           </div>
         </div>
       </div>
 
       <div className="mission-section">
-        <h2>Our Service</h2>
+        <h2 className=" spa-heading">Our Service</h2>
         <p>
           Our Service is to empower individuals and organizations to achieve their goals through
           innovative solutions and exceptional service. We believe in creating value and building
@@ -114,7 +114,7 @@ const AboutUs = () => {
 </div>
 
       <div className="values-section">
-        <h2>Our Values</h2>
+        <h2 className=" spa-heading">Our Values</h2>
         <ul>
           <li>"Customer Satisfaction: We put our customers first in everything we do.</li>
           <li>Innovation: We embrace creativity and forward-thinking solutions.</li>
@@ -123,7 +123,7 @@ const AboutUs = () => {
         </ul>
       </div>
       <div className="testimonials-section">
-        <h2>Testimonials</h2>
+        <h2 className=" spa-heading">Testimonials</h2>
         <div className="testimonials">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="testimonial-card">

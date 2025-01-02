@@ -15,7 +15,7 @@ const SkinLaserPage = () => {
       <header className="hero-section">
         <img src={img3} alt="Skin Laser" className="hero-image" /> 
         <div className="hero-text">
-          <h1>"Discover the Power of Skin Laser,,</h1>
+          <h1 >"Discover the Power of Skin Laser,,</h1>
           
         </div>
       </header>
@@ -24,7 +24,7 @@ const SkinLaserPage = () => {
         <div className="service-item">
           <img src={img2} alt="Laser Treatment 1" className="service-image" />
           <div className="service-description">
-            <h2>Acne Scar Treatment</h2>
+            <h2 className=" spa-heading">Acne Scar Treatment</h2>
             <p>Laser treatment to reduce acne scars and promote smooth skin.</p>
           </div>
         </div>
@@ -32,7 +32,7 @@ const SkinLaserPage = () => {
         <div className="service-item">
           <img src={img1} alt="Laser Treatment 2" className="service-image" />
           <div className="service-description">
-            <h2>Skin Rejuvenation</h2>
+            <h2 className=" spa-heading">Skin Rejuvenation</h2>
             <p>Revitalize your skin with advanced laser rejuvenation techniques.</p>
           </div>
         </div>
@@ -40,7 +40,7 @@ const SkinLaserPage = () => {
         <div className="service-item">
           <img src={img0} alt="Laser Treatment 3" className="service-image" />
           <div className="service-description">
-            <h2>Hair Removal</h2>
+            <h2 className=" spa-heading">Hair Removal</h2>
             <p>Permanent hair removal with the latest laser technology.</p>
           </div>
         </div>
