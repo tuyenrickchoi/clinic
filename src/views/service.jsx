@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../components/styles/service.css';
 import massageImg from '../assets/massage5.jpg';
 import spaImg from '../assets/spa.jpg';
 import facialImg from '../assets/facial.jpg';
 
 
+
 const Services = () => {
-  const [currentService, setCurrentService] = useState('Facial');
   const [serviceData, setServiceData] = useState([]);
+  const location = useLocation();
+  const query = useMemo(() => new URLSearchParams(location.search), [location]);
+  const service = query.get('service');
+  const [currentService, setCurrentService] = useState(service || 'Facial');
+  
 
   // Hàm fetch dữ liệu từ API
   const fetchServiceData = async (service) => {
@@ -41,7 +46,7 @@ const Services = () => {
   };
 
   return (
-    <div className="services-page">      
+    <div className="service-page">      
       <div className="container">
         <h1 className="text-center">Our Services</h1>
         <div className="row">
