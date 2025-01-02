@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import '../components/styles/adminPage.css'; // Import the CSS file
-// ...existing code...
+import '../components/styles/adminPage.css';
 
 const AdminPage = () => {
     const [bookings, setBookings] = useState([]);
     const [sellProducts, setSellProducts] = useState([]);
-    const [view, setView] = useState('bookings'); // State to toggle between views
-    const [isAuthenticated, setIsAuthenticated] = useState(false); // State for authentication
-    const [password, setPassword] = useState(''); // State for password input
+    const [view, setView] = useState('bookings');
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [password, setPassword] = useState('');
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -37,10 +36,36 @@ const AdminPage = () => {
     }, [isAuthenticated]);
 
     const handleLogin = () => {
-        if (password === 'admin123') { // Replace with your desired password
+        if (password === 'admin123') {
             setIsAuthenticated(true);
         } else {
             alert('Incorrect password');
+        }
+    };
+
+   
+
+    const handleDeleteBooking = async (id) => {
+        try {
+            await fetch(`/api/bookings/${id}`, {
+                method: 'DELETE',
+            });
+            setBookings(bookings.filter((booking) => booking._id !== id));
+        } catch (error) {
+            console.error('Error deleting booking:', error);
+        }
+    };
+
+   
+
+    const handleDeleteOrder = async (id) => {
+        try {
+            await fetch(`/api/sellProduct/${id}`, {
+                method: 'DELETE',
+            });
+            setSellProducts(sellProducts.filter((order) => order._id !== id));
+        } catch (error) {
+            console.error('Error deleting order:', error);
         }
     };
 
@@ -49,17 +74,14 @@ const AdminPage = () => {
             <div className="login-container">
                 <div className="login-box">
                     <h1 className="login-title">Admin Login</h1>
-                    <input 
-                        type="password" 
-                        className="login-input" 
-                        placeholder="Enter password" 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
+                    <input
+                        type="password"
+                        className="login-input"
+                        placeholder="Enter password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
-                    <button 
-                        className="login-button"
-                        onClick={handleLogin}
-                    >
+                    <button className="login-button" onClick={handleLogin}>
                         Login
                     </button>
                 </div>
@@ -71,14 +93,14 @@ const AdminPage = () => {
         <div className="dashboard-container">
             <h1 className="dashboard-title">Admin Dashboard</h1>
             <div className="nav-buttons">
-                <button 
-                    className={`nav-button ${view === 'bookings' ? 'active' : 'inactive'}`} 
+                <button
+                    className={`nav-button ${view === 'bookings' ? 'active' : 'inactive'}`}
                     onClick={() => setView('bookings')}
                 >
                     Booking List
                 </button>
-                <button 
-                    className={`nav-button ${view === 'orders' ? 'active' : 'inactive'}`} 
+                <button
+                    className={`nav-button ${view === 'orders' ? 'active' : 'inactive'}`}
                     onClick={() => setView('orders')}
                 >
                     Order List
@@ -98,6 +120,8 @@ const AdminPage = () => {
                                 <p><strong>Time:</strong> {booking.time}</p>
                                 <p><strong>Notes:</strong> {booking.notes}</p>
                                 <p><strong>Created At:</strong> {new Date(booking.createdAt).toLocaleString()}</p>
+                              
+                                <button onClick={() => handleDeleteBooking(booking._id)}>Delete</button>
                             </div>
                         ))}
                     </div>
@@ -124,6 +148,8 @@ const AdminPage = () => {
                                         ))}
                                     </ul>
                                 </div>
+                                
+                                <button onClick={() => handleDeleteOrder(order._id)}>Delete</button>
                             </div>
                         ))}
                     </div>
@@ -131,6 +157,6 @@ const AdminPage = () => {
             )}
         </div>
     );
-}
-    
+};
+
 export default AdminPage;

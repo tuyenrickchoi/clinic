@@ -10,7 +10,7 @@ class HeroBanner extends React.Component{
             <div className="container">
                 <div className="row herro-banner-content">
                   <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 style-content">
-                     <h1>Welcome to TTN website</h1>
+                     <h1>Welcome to TTN Beauty clinic</h1>
                       <p>"Giving you natural beauty and my life become happy and funny"</p>
                      
                       </div>
