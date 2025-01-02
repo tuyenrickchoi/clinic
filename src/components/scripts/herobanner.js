@@ -18,7 +18,7 @@ class HeroBanner extends React.Component{
                      
                   <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <div className="herobanner-img">
-                    <img src={girl} className="img-fluid"/>
+                    <img src={girl} className="img-fluid" alt=""/>
                     
                     </div>
 
