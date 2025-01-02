@@ -41,9 +41,8 @@ const GalleryDetail = () => {
             }
             const data = await response.json();
 
-            // Lọc sản phẩm liên quan (không bao gồm sản phẩm hiện tại)
             const related = data.filter(item => item._id !== id);
-            setRelatedItems(related.slice(0, 4)); // Lấy tối đa 4 sản phẩm liên quan
+            setRelatedItems(related.slice(0, 4)); 
         } catch (error) {
             console.error('Error fetching related items:', error);
         }
@@ -88,7 +87,7 @@ const GalleryDetail = () => {
                     <div className="col-md-6">
                         <h1>{galleryItem.title}</h1>
                         <p className="sku">SKU: {galleryItem.sku}</p>
-                        <div className="rating">⭐ {reviews.length} đánh giá</div>
+                        <div className="rating">⭐ {reviews.length} Reviews</div>
                         <p className="description">{galleryItem.description}</p>
 
                         <div className="price">
@@ -97,8 +96,8 @@ const GalleryDetail = () => {
                         </div>
 
                         <div className="actions">
-                            <button className="btn" onClick={handleBuyNow}>Mua ngay</button>
-                            <button className="btn" onClick={handleAddToCart}>Thêm vào giỏ hàng</button>
+                            <button className="btn" onClick={handleBuyNow}>Buy now</button>
+                            <button className="btn" onClick={handleAddToCart}>Add to shopping cart</button>
                         </div>
                     </div>
                 </div>

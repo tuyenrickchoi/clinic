@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom'; // Import useHistory
 import { CartContext } from '../components/scripts/cartContext';
 import '../components/styles/shoppingCart.css';
 import trashcanIcon from '../assets/trashcan.svg';
@@ -12,6 +13,7 @@ const ShoppingCart = () => {
     paymentMethod: 'cash',
   });
   const [totalPrice, setTotalPrice] = useState(0);
+  const history = useHistory(); // Initialize useHistory
 
   useEffect(() => {
     const calculateTotalPrice = () => {
@@ -85,6 +87,7 @@ const ShoppingCart = () => {
         address: '',
         paymentMethod: 'cash',
       });
+      history.push('/'); // Redirect to homepage
     } catch (error) {
       alert('Failed to submit order. Please try again. Error: ' + error.message);
     }

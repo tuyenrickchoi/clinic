@@ -45,7 +45,7 @@ const AdminPage = () => {
 
     if (!isAuthenticated) {
         return (
-            <div className="p-6">
+            <div className="p-6 min-h-screen flex flex-col justify-center"> {/* Add min-h-screen and flex classes */}
                 <h1 className="text-2xl font-bold mb-4">Admin Login</h1>
                 <input 
                     type="password" 
@@ -65,7 +65,7 @@ const AdminPage = () => {
     }
 
     return (
-        <div className="p-6">
+        <div className="p-6 min-h-screen flex flex-col"> {/* Add min-h-screen and flex classes */}
             <h1 className="text-2xl font-bold mb-4">Admin Dashboard</h1>
             <div className="mb-6 flex space-x-4">
                 <button 

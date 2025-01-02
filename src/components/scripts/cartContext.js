@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
 
 export const CartContext = createContext();
 
@@ -8,10 +7,12 @@ export const CartProvider = ({ children }) => {
   const [cartQuantity, setCartQuantity] = useState(0);
 
   useEffect(() => {
-    axios.get('/api/cart').then((response) => {
-      setCart(response.data);
-      calculateQuantity(response.data);
-    });
+    fetch('/api/cart')
+      .then((response) => response.json())
+      .then((data) => {
+        setCart(data);
+        calculateQuantity(data);
+      });
   }, []);
 
   const calculateQuantity = (cart) => {
@@ -20,28 +21,52 @@ export const CartProvider = ({ children }) => {
   };
 
   const addToCart = (product) => {
-    axios.post('/api/cart', product).then((response) => {
-      setCart(response.data);
-      calculateQuantity(response.data);
-    });
+    fetch('/api/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setCart(data);
+        calculateQuantity(data);
+      });
   };
 
   const updateCart = (productId, quantity) => {
-    axios.patch(`/api/cart/${productId}`, { quantity }).then((response) => {
-      setCart(response.data);
-      calculateQuantity(response.data);
-    });
+    fetch(`/api/cart/${productId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ quantity }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setCart(data);
+        calculateQuantity(data);
+      });
   };
 
   const removeFromCart = (productId) => {
-    axios.delete(`/api/cart/${productId}`).then((response) => {
-      setCart(response.data);
-      calculateQuantity(response.data);
-    });
+    fetch(`/api/cart/${productId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setCart(data);
+        calculateQuantity(data);
+      });
   };
 
   const clearCart = () => {
-    const promises = cart.map(item => axios.delete(`/api/cart/${item.productId}`));
+    const promises = cart.map((item) =>
+      fetch(`/api/cart/${item.productId}`, {
+        method: 'DELETE',
+      })
+    );
     Promise.all(promises).then(() => {
       setCart([]);
       setCartQuantity(0);

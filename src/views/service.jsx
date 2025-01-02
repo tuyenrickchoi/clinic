@@ -1,22 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../components/styles/service.css';
 import massageImg from '../assets/massage5.jpg';
 import spaImg from '../assets/spa.jpg';
 import facialImg from '../assets/facial.jpg';
 
+
 const Services = () => {
   const [currentService, setCurrentService] = useState('Facial');
   const [serviceData, setServiceData] = useState([]);
-  const [showBookingForm, setShowBookingForm] = useState(false);
-  const [selectedService, setSelectedService] = useState(null);
-  const [bookingData, setBookingData] = useState({
-    customerName: '',
-    phoneNumber: '',
-    email: '',
-    date: '',
-    time: '',
-    notes: ''
-  });
 
   // Hàm fetch dữ liệu từ API
   const fetchServiceData = async (service) => {
@@ -48,48 +40,6 @@ const Services = () => {
     setCurrentService(service);
   };
 
-  const handleBookingSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/bookings', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...bookingData,
-          serviceName: selectedService.name
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Booking failed');
-      }
-
-      alert('Booking successful!');
-      setShowBookingForm(false);
-      setBookingData({
-        customerName: '',
-        phoneNumber: '',
-        email: '',
-        date: '',
-        time: '',
-        notes: ''
-      });
-    } catch (error) {
-      console.error('Error creating booking:', error);
-      alert('Failed to create booking. Please try again.');
-    }
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setBookingData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
   return (
     <div className="services-page">      
       <div className="container">
@@ -107,6 +57,10 @@ const Services = () => {
             <img src={spaImg} alt="Spa Treatments" className="service-img" />
             <h3>Spa Treatments</h3>
             <p>Our spa services include herbal treatments and detox programs to help you feel your best.</p>
+                          {/* Sử dụng Link để chuyển hướng */}
+                          <Link to="/bookings" className="btn btn-info my-3">
+          My Booking
+        </Link>
           </div>
           
           {/* Dịch vụ Facial */}
@@ -123,121 +77,27 @@ const Services = () => {
           <div className="row">
             {serviceData.map((item) => (
               <div key={item._id || item.id} className="col-sm-12 col-md-6 col-lg-4">
-                <div className="card" style={{ width: '18rem', margin: '10px' }}>
-                  <img 
-                    src={item.img} 
-                    alt={item.name} 
-                    className="card-img-top" 
-                    style={{ height: '200px', objectFit: 'cover' }} 
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{item.name}</h5>
-                    <p className="card-text">{item.description}</p>
-                    <p className="card-text">$ {item.price}</p>
-                    <button 
-                      className="btn btn-primary"
-                      onClick={() => {
-                        setSelectedService(item);
-                        setShowBookingForm(true);
-                      }}
-                    >
-                      Book Now
-                    </button>
+                <Link to={`/service-detail/${item._id}`} className="card-link">
+                  <div className="card" style={{ width: '18rem', margin: '10px' }}>
+                    <img 
+                      src={item.img} 
+                      alt={item.name} 
+                      className="card-img-top" 
+                      style={{ height: '200px', objectFit: 'cover' }} 
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{item.name}</h5>
+                      <p className="card-text">${item.price}</p>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Booking Modal */}
-        {showBookingForm && (
-          <div className="modal" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }}>
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title">Book {selectedService?.name}</h5>
-                  <button type="button" className="close" onClick={() => setShowBookingForm(false)}>
-                    <span>&times;</span>
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <form onSubmit={handleBookingSubmit}>
-                    <div className="form-group">
-                      <label>Name</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        name="customerName"
-                        value={bookingData.customerName}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Phone Number</label>
-                      <input
-                        type="tel"
-                        className="form-control"
-                        name="phoneNumber"
-                        value={bookingData.phoneNumber}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Email</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        name="email"
-                        value={bookingData.email}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Date</label>
-                      <input
-                        type="date"
-                        className="form-control"
-                        name="date"
-                        value={bookingData.date}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Time</label>
-                      <input
-                        type="time"
-                        className="form-control"
-                        name="time"
-                        value={bookingData.time}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Notes</label>
-                      <textarea
-                        className="form-control"
-                        name="notes"
-                        value={bookingData.notes}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <button type="submit" className="btn btn-primary">
-                      Submit Booking
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
 };
+
 export default Services;

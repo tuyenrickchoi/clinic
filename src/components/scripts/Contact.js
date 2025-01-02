@@ -30,6 +30,17 @@ class Contact extends React.Component {
               <button type="submit">Submit</button>
             </form>
           </div>
+
+          {/* Google Maps Section */}
+          <h2 className="text-center ">....</h2>
+          <div className="map-container">
+          <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15677.980124653815!2d106.6772195!3d10.7733464!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1e3b73d204aab42a!2zUGjDsm5nIGtow6FtIGNodXnDqm4ga2hvYSB0aOG6qW0gbeG7uSBBTEVHQQ!5e0!3m2!1svi!2s!4v1673088246933!5m2!1svi!2s"
+    allowFullScreen=""
+    loading="lazy"
+    title="Google Map"
+  ></iframe>
+          </div>
         </div>
       </div>
     );
