@@ -9,6 +9,10 @@ const gallerySchema = mongoose.Schema({
         type:String,
         require: true,
     },
+    price: {
+        type: String,
+        required: true
+    },
     description: {
         type: String,
         required: false

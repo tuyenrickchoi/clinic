@@ -1,0 +1,21 @@
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+button.bg-blue-500 {
+    background-color: #3b82f6;
+    color: white;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Highlight effect */
+}
+
+button.bg-gray-200 {
+    background-color: #e5e7eb;
+    color: black;
+}
+
+button:hover {
+    opacity: 0.8;
+}
